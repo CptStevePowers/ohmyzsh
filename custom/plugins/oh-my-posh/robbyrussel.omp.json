@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [ 
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "#c386f1",
+          "template": "{{ .UserName }}@WSL Ubuntu"
+        },
+        {
+          "foreground": "#98C379",
+          "style": "plain",
+          "template": "\u279c",
+          "type": "text"
+        },
+        {
+          "foreground": "#56B6C2",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#D0666F",
+          "properties": {
+            "branch_icon": ""
+          },
+          "style": "plain",
+          "template": "<#5FAAE8>git:(</>{{ .HEAD }}<#5FAAE8>)</>",
+          "type": "git"
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "display_mode": "always",
+          "foreground": "#3c93f9",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
+        },
+        {
+          "foreground": "#BF616A",
+          "style": "plain",
+          "template": " \u2717",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "tooltips": [ 
+    {
+      "type": "kubectl",
+      "tips": [ "oc","kube", "kubectl" ],
+      "style": "diamond",
+      "leading_diamond": "",
+      "trailing_diamond": "",
+      "foreground": "#000000",
+      "background": "#ebcc34",
+      "template": "  {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}
